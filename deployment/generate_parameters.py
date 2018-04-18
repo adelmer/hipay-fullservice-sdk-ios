@@ -2,8 +2,8 @@ import plistlib, sys, os
 
 parameters = dict(
     hipay=dict(
-        username = os.environ.get('HIPAY_FULLSERVICE_API_USERNAME', 'xxxxxx'),
-        password = os.environ.get('HIPAY_FULLSERVICE_API_PASSWORD', 'xxxxxx')
+        username = os.environ.get('HIPAY_EXPLOIT_API_USERNAME', 'xxxxxx'),
+        password = os.environ.get('HIPAY_EXPLOIT_API_PASSWORD', 'xxxxxx')
     ),
     hockeyapp=dict(
         app_identifier = os.environ.get('HOCKEY_APP_IDENTIFIER', 'xxxxxx'),

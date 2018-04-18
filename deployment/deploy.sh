@@ -15,8 +15,8 @@ function deploy_app() {
         echo "Build and deploy application for environment $1"
 
         if [ "$1" = "production" ];then
-            export HIPAY_FULLSERVICE_API_USERNAME=$HIPAY_FULLSERVICE_PROD_API_USERNAME
-            export HIPAY_FULLSERVICE_API_PASSWORD=$HIPAY_FULLSERVICE_PROD_API_PASSWORD
+            export HIPAY_FULLSERVICE_API_USERNAME=$HIPAY_EXPLOIT_PROD_API_USERNAME
+            export HIPAY_FULLSERVICE_API_PASSWORD=$HIPAY_EXPLOIT_PROD_API_PASSWORD
 
             sed -it "s/HPFEnvironmentStage/HPFEnvironmentProduction/" Example/HiPayFullservice/HPFAppDelegate.m
         fi
@@ -50,9 +50,8 @@ deploy_app "stage"
 ###############################################
 #            DEPLOY VERSION PRODUCTON
 ###############################################
-if [ "$CIRCLE_BRANCH" = "master" ];then
-    echo "Branch is master, deploy app with production"
-    deploy_app "production"
-fi
+echo "Deploy app with production"
+deploy_app "production"
+
 
 
