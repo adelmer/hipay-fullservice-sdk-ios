@@ -19,6 +19,9 @@ function deploy_app() {
             export HIPAY_FULLSERVICE_API_PASSWORD=$HIPAY_EXPLOIT_PROD_API_PASSWORD
 
             sed -it "s/HPFEnvironmentStage/HPFEnvironmentProduction/" Example/HiPayFullservice/HPFAppDelegate.m
+            sed -it "s/public_credentials_signature.php/public_credentials_signature_exploit_prod.php/" Example/HiPayFullservice/HPFDemoTableViewController.m
+        elseif
+            sed -it "s/public_credentials_signature.php/public_credentials_signature_exploit_stage.php/" Example/HiPayFullservice/HPFDemoTableViewController.m
         fi
 
         echo "Get Identifier"
