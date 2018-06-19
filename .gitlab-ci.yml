@@ -3,7 +3,6 @@ image: hipay/gitlab-ci-base:jessie
 stages:
  - sync
 
-
 sync:
   stage: sync
   script:
@@ -11,3 +10,5 @@ sync:
   - cd hipay-fullservice-sdk-ios.git
   - git push --mirror https://$GITHUB_USER:$GITHUB_PASSWORD@github.com/hipay/hipay-fullservice-sdk-ios.git
   allow_failure: true
+  tags:
+    - sdk-ios 
