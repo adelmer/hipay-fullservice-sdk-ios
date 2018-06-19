@@ -6,6 +6,7 @@ stages:
 sync:
   stage: sync
   script:
+  - git lfs pull
   - git clone --mirror https://$GITLAB_USER:$GITLAB_PASSWORD@gitlab.hipay.org/pi-ecommerce/hipay-fullservice-sdk-ios.git
   - cd hipay-fullservice-sdk-ios.git
   - git push --mirror https://$GITHUB_USER:$GITHUB_PASSWORD@github.com/hipay/hipay-fullservice-sdk-ios.git
