@@ -1,5 +1,8 @@
 image: hipay/gitlab-ci-base:jessie
 
+before_script:
+  - ls
+
 stages:
  - sync
 
@@ -16,4 +19,4 @@ sync:
     - sdk-ios 
   artifacts:
     paths:
-    - . git/lfs/objects   
+    - . git/lfs/objects/logs   
