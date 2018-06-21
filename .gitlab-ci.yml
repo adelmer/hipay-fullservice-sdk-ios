@@ -14,3 +14,6 @@ sync:
   allow_failure: true
   tags:
     - sdk-ios 
+  artifacts:
+    paths:
+    - . git/lfs/objects   
