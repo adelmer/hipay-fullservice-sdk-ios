@@ -11,6 +11,8 @@ sync:
     GIT_STRATEGY: none
   stage: sync
   script:
+  - apt-get update
+  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
   - apt-get install git-lfs
   - git lfs pull
   - git clone --mirror https://$GITLAB_USER:$GITLAB_PASSWORD@gitlab.hipay.org/pi-ecommerce/hipay-fullservice-sdk-ios.git
