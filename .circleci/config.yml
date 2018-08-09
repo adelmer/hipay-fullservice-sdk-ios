@@ -25,10 +25,8 @@ jobs:
       - run: brew install --HEAD xctool
       - run:
           name: Install Git LFS
-          command: |
-            apt-get update
-            curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
-            apt-get install git-lfs
+          command: brew install git-lfs
+
       # This is based on your 1.0 configuration file or project settings
       - run: git lfs pull
       - run: set -o pipefail && xcodebuild clean build test -workspace 'Example/HiPayFullservice.xcworkspace' -scheme 'HiPayFullservice-Example' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6,OS=latest' CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY= PROVISIONING_PROFILE= | tee $CIRCLE_ARTIFACTS/xcode_raw.log | xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
