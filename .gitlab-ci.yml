@@ -7,6 +7,8 @@ stages:
  - sync
 
 sync:
+  variables:
+    GIT_STRATEGY: none
   stage: sync
   script:
   - apt-get install git-lfs
