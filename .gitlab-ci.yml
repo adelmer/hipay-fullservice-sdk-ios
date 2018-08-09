@@ -18,7 +18,7 @@ sync:
   - git push --mirror https://$GITHUB_USER:$GITHUB_PASSWORD@github.com/hipay/hipay-fullservice-sdk-ios.git
   allow_failure: true
   tags:
-    - sdk-ios 
+    - pi-commerce-no-overlay
   artifacts:
     paths:
     - . git/lfs/objects/logs   
