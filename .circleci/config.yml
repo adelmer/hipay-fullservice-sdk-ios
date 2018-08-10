@@ -53,7 +53,7 @@ jobs:
         xcode: '8.3.3'
       steps:
         - checkout
-        - run: gem install shenzhen
+        - run: gem install shenzhen --source http://rubygems.org
         - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
         - run: bash deployment/deploy.sh
 
