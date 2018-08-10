@@ -53,11 +53,13 @@ jobs:
         xcode: '8.3.3'
       steps:
         - checkout
-        - bash deployment/deploy.sh
+        - run: bash deployment/deploy.sh
 
 workflows:
   version: 2
   build-test-deploy:
     jobs:
       - build-and-test
-      - deploy
+      - deploy:
+          requires:
+            - build-and-test
