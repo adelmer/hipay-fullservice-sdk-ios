@@ -33,7 +33,7 @@ function deploy_app() {
         (export HOCKEY_APP_IDENTIFIER=$(cat $CIRCLE_ARTIFACTS/app_identifier); cd deployment/; python generate_parameters.py)
 
         echo "Gym Legacy build"
-        gym --use_legacy_build_api
+        fastlane gym --use_legacy_build_api
 
         echo "IPA Distribute"
         ipa distribute:hockeyapp --token "$HOCKEY_APP_TOKEN" --notes "CircleCI build $CIRCLE_BUILD_NUM" --commit-sha "$CIRCLE_SHA1" --build-server-url "$CIRCLE_BUILD_URL" --repository-url "$CIRCLE_REPOSITORY_URL" --identifier "$(cat $CIRCLE_ARTIFACTS/app_identifier)"
