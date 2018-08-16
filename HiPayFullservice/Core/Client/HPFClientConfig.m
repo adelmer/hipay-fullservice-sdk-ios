@@ -54,7 +54,10 @@
 
     if (types.count > 0) {
         for (NSDictionary *type in types) {
-            foundURLScheme = [type[@"CFBundleURLSchemes"] containsObject:appURLscheme];
+            //In case of multi-schemes
+            if(foundURLScheme = [type[@"CFBundleURLSchemes"] containsObject:appURLscheme]){
+                break;
+            }
         }
     }
 
